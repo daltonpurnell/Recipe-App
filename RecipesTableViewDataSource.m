@@ -28,8 +28,10 @@
     
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
+    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     // If there is not a cell yet, alloc init (create one)

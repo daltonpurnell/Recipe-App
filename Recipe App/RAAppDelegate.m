@@ -18,6 +18,8 @@
     
     // initialize a UINavigationController with a recipeViewController instance as the rootViewController
     RAViewController *viewController = [RAViewController new];
+    
+    // Embed the navigation controller in the view controller
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
     // Make the navigationController the rootViewController of the window
