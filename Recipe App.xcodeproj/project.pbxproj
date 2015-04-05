@@ -23,6 +23,9 @@
 		D735C5EB1ACE35480088137A /* RAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D735C5EA1ACE35480088137A /* RAViewController.m */; };
 		D735C5EE1ACE37750088137A /* RecipesTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D735C5ED1ACE37750088137A /* RecipesTableViewDataSource.m */; };
 		D7C44A901AD065EE007C36B2 /* RADetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7C44A8F1AD065EE007C36B2 /* RADetailViewController.m */; };
+		D7C44A921AD0A362007C36B2 /* food@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7C44A911AD0A362007C36B2 /* food@2x.png */; };
+		D7C44A941AD0A49D007C36B2 /* food@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7C44A931AD0A49D007C36B2 /* food@3x.png */; };
+		D7C44A961AD0A6CA007C36B2 /* brown_paper_background@1x.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D7C44A951AD0A6CA007C36B2 /* brown_paper_background@1x.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		D735C5ED1ACE37750088137A /* RecipesTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecipesTableViewDataSource.m; path = ../RecipesTableViewDataSource.m; sourceTree = "<group>"; };
 		D7C44A8E1AD065EE007C36B2 /* RADetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RADetailViewController.h; path = ../RADetailViewController.h; sourceTree = "<group>"; };
 		D7C44A8F1AD065EE007C36B2 /* RADetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RADetailViewController.m; path = ../RADetailViewController.m; sourceTree = "<group>"; };
+		D7C44A911AD0A362007C36B2 /* food@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "food@2x.png"; sourceTree = "<group>"; };
+		D7C44A931AD0A49D007C36B2 /* food@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "food@3x.png"; sourceTree = "<group>"; };
+		D7C44A951AD0A6CA007C36B2 /* brown_paper_background@1x.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "brown_paper_background@1x.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,9 @@
 				D7C44A8E1AD065EE007C36B2 /* RADetailViewController.h */,
 				D7C44A8F1AD065EE007C36B2 /* RADetailViewController.m */,
 				71F67B62192C8D6A00E609F1 /* Images.xcassets */,
+				D7C44A951AD0A6CA007C36B2 /* brown_paper_background@1x.pdf */,
+				D7C44A931AD0A49D007C36B2 /* food@3x.png */,
+				D7C44A911AD0A362007C36B2 /* food@2x.png */,
 				71F67B57192C8D6A00E609F1 /* Supporting Files */,
 			);
 			path = "Recipe App";
@@ -241,7 +250,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				71F67B5B192C8D6A00E609F1 /* InfoPlist.strings in Resources */,
+				D7C44A941AD0A49D007C36B2 /* food@3x.png in Resources */,
+				D7C44A961AD0A6CA007C36B2 /* brown_paper_background@1x.pdf in Resources */,
 				71F67B63192C8D6A00E609F1 /* Images.xcassets in Resources */,
+				D7C44A921AD0A362007C36B2 /* food@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

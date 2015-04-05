@@ -26,7 +26,7 @@
     self.window.rootViewController = navController;
 
     
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"brown_paper_bag_background@1x.png"]];
     [self.window makeKeyAndVisible];
     return YES;
 }
