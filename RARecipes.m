@@ -8,13 +8,6 @@
 
 #import "RARecipes.h"
 
-static NSString * const RecipeTitleKey = @"recipeTitle";
-static NSString * const RecipeDescriptionKey = @"recipeDescription";
-static NSString * const RecipeIngredientsKey = @"recipeIngredients";
-static NSString * const IngredientVolumeKey = @"ingredientVolume";
-static NSString * const IngredientTypeKey = @"ingredientType";
-static NSString * const DirectionsKey = @"directions";
-
 @implementation RARecipes
 
 
