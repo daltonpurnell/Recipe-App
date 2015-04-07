@@ -216,6 +216,8 @@ static CGFloat heightForIngredientsTitle = 25;
         
         count.text = [NSString stringWithFormat:@"%d", i + 1];
         
+        count.textColor = [UIColor whiteColor];
+        
         [scrollView addSubview:count];
     
         
@@ -235,8 +237,8 @@ static CGFloat heightForIngredientsTitle = 25;
     
         directions.numberOfLines = 0;
 
-        // set label text to pull from
-        //    directions.text = [RARecipes directionsAtIndex:self.index];
+         // set label text to pull from
+        directions.text = [RARecipes directionsAtIndex:self.index][i];
     
         // add label to scrollView
         [scrollView addSubview:directions];
