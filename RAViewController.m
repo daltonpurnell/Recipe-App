@@ -29,19 +29,21 @@
     // Set title
      self.title = @"Awesome Recipes";
     
+    
    // Instantiate the data source
     
     self.dataSource = [RecipesTableViewDataSource new];
     
     
     // Initialize the tableView
-    self.tableView = [UITableView new];
-    self.tableView.frame = self.view.bounds;
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     
     // the tableview on this view controller can use this view controller to find methods
     self.tableView.delegate = self;
     
-
+    // set background image
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"foodBackground.png"]];
+                                      
     
     // add the tableView as a subview of the main view
     [self.view addSubview:self.tableView];

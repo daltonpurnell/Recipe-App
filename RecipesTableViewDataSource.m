@@ -43,8 +43,20 @@
     // return a cell with the textLabel.text set to the string RARecipes class titleAtIndex for indexPath.row
     cell.textLabel.text = [RARecipes titleAtIndex:indexPath.row];
     
+    // set text to white
+    cell.textLabel.textColor = [UIColor whiteColor];
+    
+    // set background color of cells to clear
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
     
 }
+
+//- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
+//    
+//    return @"";
+//    
+//}
 
 @end

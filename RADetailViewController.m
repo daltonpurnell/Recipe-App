@@ -44,14 +44,7 @@ static CGFloat heightForIngredientsTitle = 25;
     // set title of navigation controller
     self.title = [RARecipes titleAtIndex:self.index];
     
-    
-//    UIImage * myImage = [UIImage imageNamed: @"foodBackground.png"];
-//    
-//    // initialize a uiimage view to put a photo in the background
-//    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:myImage];
-//    
-//    // add image view to view
-//    [self.view addSubview:backgroundImage];
+
     
     
     // initialize a scroll view
