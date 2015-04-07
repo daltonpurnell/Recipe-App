@@ -51,8 +51,7 @@ static CGFloat heightForIngredientsTitle = 25;
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
 
     
-    // set content size of scroll view
-    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, self.view.frame.size.height * 2.5);
+
     
     
     // set the property alwaysBounceVertical to yes
@@ -269,6 +268,9 @@ static CGFloat heightForIngredientsTitle = 25;
         
     
     }
+    
+    // set content size of scroll view
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, top);
 
 }
 
