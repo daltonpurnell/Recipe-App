@@ -22,6 +22,8 @@ static CGFloat heightForIngredientsTitle = 25;
 
 @interface RADetailViewController ()
 
+@property(nonatomic) BOOL alwaysBounceVertical;
+
 @end
 
 @implementation RADetailViewController
@@ -37,13 +39,25 @@ static CGFloat heightForIngredientsTitle = 25;
     CGFloat widthMinusMargin = self.view.frame.size.width - 2 * margin;
     
     // set background image
-    self.view.backgroundColor = [UIColor grayColor];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"food@2x.png"]];
     
     // set title of navigation controller
     self.title = [RARecipes titleAtIndex:self.index];
     
+    
     // initialize a scroll view
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    
+
+    
+    
+    // set content size of scroll view
+    scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, self.view.frame.size.height * 2.5);
+    
+    
+    // set the property alwaysBounceVertical to yes
+    scrollView.alwaysBounceVertical = YES;
+    
     
     // add scrollView to view
     [self.view addSubview:scrollView];
@@ -229,7 +243,7 @@ static CGFloat heightForIngredientsTitle = 25;
         UILabel *directions = [[UILabel alloc] initWithFrame:CGRectMake(margin + 25, top, widthMinusMargin - 35, heightForDirections)];
     
         // set font to size 15
-        directionsTitle.font = [UIFont systemFontOfSize:15];
+        directions.font = [UIFont systemFontOfSize:15];
     
         // set text color to white
         directions.textColor = [UIColor whiteColor];
