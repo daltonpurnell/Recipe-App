@@ -53,6 +53,12 @@
     
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    
+    return @"INSPIRED BY RECIPE.COM";
+    
+}
+
 //- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section {
 //    
 //    return @"";
