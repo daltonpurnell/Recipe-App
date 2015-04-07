@@ -13,16 +13,10 @@
 // set global margin
 static CGFloat margin = 15;
 
-// set global height of RecipeDescription
-static CGFloat heightForRecipeDescription = 100;
-
-// set global height for directions
-static CGFloat heightForDirections = 100;
-
 // set global height for engredient type
 static CGFloat heightForIngredientType = 40;
 
-static CGFloat heightForIngredientsTitle = 20;
+static CGFloat heightForIngredientsTitle = 25;
 
 
 
@@ -37,14 +31,13 @@ static CGFloat heightForIngredientsTitle = 20;
     
     
     
-    // Set a top margin
-    CGFloat topMargin = 15;
+
     
     // set width of view minus the margins
     CGFloat widthMinusMargin = self.view.frame.size.width - 2 * margin;
     
     // set background image
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"food@2x.png"]];
+    self.view.backgroundColor = [UIColor grayColor];
     
     // set title of navigation controller
     self.title = [RARecipes titleAtIndex:self.index];
@@ -57,6 +50,14 @@ static CGFloat heightForIngredientsTitle = 20;
     
     
     
+    
+    
+    
+    // Set a top margin
+    CGFloat topMargin = 15;
+    
+    // Calculate the height of the description since it covers more than one line
+    CGFloat heightForRecipeDescription = [self heightForDescriptionString:[RARecipes descriptionAtIndex:self.index]];
     
     // add label for recipe description
     UILabel *recipeDescription = [[UILabel alloc] initWithFrame:CGRectMake(margin, topMargin, widthMinusMargin, heightForRecipeDescription)];
@@ -79,8 +80,14 @@ static CGFloat heightForIngredientsTitle = 20;
     
     
     
+    
+    
+    
+    // Shift top margin with each label added to the scrollView
+    CGFloat top = topMargin + heightForRecipeDescription + margin * 2;
+    
     // create an ingredientsTitle label and add it to the view in bold font
-    UILabel *ingredientsTitle = [[UILabel alloc] initWithFrame:CGRectMake(margin, topMargin + heightForRecipeDescription, widthMinusMargin, heightForIngredientsTitle)];
+    UILabel *ingredientsTitle = [[UILabel alloc] initWithFrame:CGRectMake(margin, top, widthMinusMargin, heightForIngredientsTitle)];
     
     // set title text to ingredients (just type a string since it will say "ingredients" for all the recipes
     ingredientsTitle.text =@"Ingredients";
@@ -94,61 +101,81 @@ static CGFloat heightForIngredientsTitle = 20;
     // add label to scrollView
     [scrollView addSubview:ingredientsTitle];
     
+    top += 20 + margin;
     
-    // run through the arrays for ingredientType and ingredientVolume
+    
+    
+    
+    
+    
+    
+    // iterate through the arrays for ingredientType and ingredientVolume
     for (int i = 0; i < [RARecipes ingredientCountAtIndex:self.index]; i++) {
     
+        
+        
+        
+        // Create an ingredientVolume label and add it to the view
+        UILabel *ingredientVolume = [[UILabel alloc] initWithFrame:CGRectMake(margin, top, widthMinusMargin / 4, heightForIngredientType)];
+        
+        ingredientVolume.numberOfLines = 0;
+        
+        // set font to bold size 20
+        ingredientVolume.font = [UIFont boldSystemFontOfSize:20];
+        
+        // set text to pull from...
+        ingredientVolume.text = [RARecipes ingredientVolumeAtIndex:self.index inRecipeAtIndex:self.index];
+        
+        // set label color to white
+        ingredientVolume.textColor = [UIColor whiteColor];
+        
+        // add label to scrollView
+        [scrollView addSubview:ingredientVolume];
+        
+        
+        
+        
     
-    // Create an ingredientType label and add it to the view
-    UILabel *ingredientType = [[UILabel alloc] initWithFrame:CGRectMake(margin + widthMinusMargin / 4, topMargin + heightForRecipeDescription + heightForIngredientsTitle, widthMinusMargin * .75, heightForIngredientType)];
+        // Create an ingredientType label and add it to the view
+        UILabel *ingredientType = [[UILabel alloc] initWithFrame:CGRectMake(margin + widthMinusMargin / 4, top, widthMinusMargin * 0.75, heightForIngredientType)];
     
-    ingredientType.numberOfLines = 0;
+        ingredientType.numberOfLines = 0;
     
-    // set text to pull from...
-    ingredientType.text = [RARecipes ingredientTypeAtIndex:self.index inRecipeAtIndex:self.index];
+        // set text to pull from...
+        ingredientType.text = [RARecipes ingredientTypeAtIndex:i inRecipeAtIndex:self.index];
     
-    // set label color to white
-    ingredientType.textColor = [UIColor whiteColor];
+        // set label color to white
+        ingredientType.textColor = [UIColor whiteColor];
     
-    // set font to size 15
-    ingredientType.font = [UIFont systemFontOfSize:15];
+        // set font to size 15
+        ingredientType.font = [UIFont systemFontOfSize:15];
     
-    // add label to scrollView
-    [scrollView addSubview:ingredientType];
+        // add label to scrollView
+        [scrollView addSubview:ingredientType];
     
-    // Track the top of each label as you iterate through the ingredient types and add to it each time you want to move further down in the scrollView
-//    topMargin += (heightForIngredientType + margin);
+        // Track the top of each label as you iterate through the ingredient types and add to it each time you want to move further down in the scrollView
+        
+        top += (20 + margin);
     
-    
-    
-    
-    // Create an ingredientVolume label and add it to the view
-    UILabel *ingredientVolume = [[UILabel alloc] initWithFrame:CGRectMake(margin, topMargin + heightForRecipeDescription + heightForIngredientsTitle, widthMinusMargin / 4, heightForIngredientType)];
-    
-    ingredientVolume.numberOfLines = 0;
-    
-    // set font to bold size 20
-    ingredientVolume.font = [UIFont boldSystemFontOfSize:20];
-    
-    // set text to pull from...
-    ingredientVolume.text = [RARecipes ingredientVolumeAtIndex:self.index inRecipeAtIndex:self.index];
-    
-    // set label color to white
-    ingredientType.textColor = [UIColor whiteColor];
-    
-    // add label to scrollView
-    [scrollView addSubview:ingredientType];
         
     }
     
+    
+    
+    
+    
+    
     // Track the top of each label as you iterate through the ingredient types and add to it each time you want to move further down in the scrollView
-//    topMargin += (heightForIngredientType + margin);
+    
+    topMargin += (20 + margin);
+    
+    
     
     
     
     
     // Create directionsTitle label and add it to the view
-    UILabel *directionsTitle = [[UILabel alloc] initWithFrame:CGRectMake(margin, topMargin + heightForRecipeDescription + heightForIngredientsTitle + heightForIngredientType + heightForIngredientType, widthMinusMargin, 20)];
+    UILabel *directionsTitle = [[UILabel alloc] initWithFrame:CGRectMake(margin, top, widthMinusMargin, heightForIngredientsTitle)];
     
     // set text to Directions
     directionsTitle.text = @"Directions";
@@ -164,29 +191,87 @@ static CGFloat heightForIngredientsTitle = 20;
     
     
     
+    
+    
+    top += 20 + margin;
+    
+    
+    
+    
+    
+    
     // run through the arrays for directions
-    for (int i = 0; i < [[RARecipes directionsAtIndex:self.index]count]; i++) {
+    for (int i = 0; i < [[RARecipes directionsAtIndex:self.index] count]; i++) {
     
-    // Create directions label and add it to the view
-    UILabel *directions = [[UILabel alloc] initWithFrame:CGRectMake(margin, topMargin + heightForRecipeDescription, widthMinusMargin, heightForDirections)];
+        // set the height for the directions by using the heightForDirectionsString
+        CGFloat heightForDirections = [self heightForDirectionsString:[RARecipes directionsAtIndex:self.index] [i]];
+        
+        
+        
+        
+        
+        UILabel *count = [[UILabel alloc] initWithFrame:CGRectMake(margin, top, 30, heightForIngredientsTitle)];
+        
+        count.font = [UIFont boldSystemFontOfSize:20];
+        
+        count.text = [NSString stringWithFormat:@"%d", i + 1];
+        
+        [scrollView addSubview:count];
     
-    // set font to size 15
-    directionsTitle.font = [UIFont systemFontOfSize:15];
+        
+        
+        
+        
+        
+        // Create directions label and add it to the view
+        UILabel *directions = [[UILabel alloc] initWithFrame:CGRectMake(margin + 25, top, widthMinusMargin - 35, heightForDirections)];
     
-    // set text color to white
-    directions.textColor = [UIColor whiteColor];
+        // set font to size 15
+        directionsTitle.font = [UIFont systemFontOfSize:15];
+    
+        // set text color to white
+        directions.textColor = [UIColor whiteColor];
     
     
-    directions.numberOfLines = 0;
+        directions.numberOfLines = 0;
 
-    // set label text to pull from
-//    directions.text = [RARecipes directionsAtIndex:self.index];
+        // set label text to pull from
+        //    directions.text = [RARecipes directionsAtIndex:self.index];
     
-    // add label to scrollView
-    [scrollView addSubview:directions];
+        // add label to scrollView
+        [scrollView addSubview:directions];
+        
+        
+        
+        top += (heightForDirections + margin);
+        
+        
     
     }
 
 }
+
+
+- (CGFloat)heightForDescriptionString:(NSString *)descriptionString {
+    
+    CGRect bounding = [descriptionString boundingRectWithSize:CGSizeMake(self.view.frame.size.width - 2 * margin, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil];
+    
+    
+    return bounding.size.height;
+    
+    
+}
+
+- (CGFloat)heightForDirectionsString:(NSString *)directionsString {
+    
+    CGRect bounding = [directionsString boundingRectWithSize:CGSizeMake(self.view.frame.size.width - 2 * margin - 35, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} context:nil];
+                                                                                                                                                                                              
+
+    return bounding.size.height;
+    
+    
+    
+}
+
 
 @end
