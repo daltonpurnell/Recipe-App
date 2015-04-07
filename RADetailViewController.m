@@ -14,7 +14,7 @@
 static CGFloat margin = 15;
 
 // set global height for engredient type
-static CGFloat heightForIngredientType = 40;
+static CGFloat heightForIngredientType = 25;
 
 static CGFloat heightForIngredientsTitle = 25;
 
@@ -39,17 +39,24 @@ static CGFloat heightForIngredientsTitle = 25;
     CGFloat widthMinusMargin = self.view.frame.size.width - 2 * margin;
     
     // set background image
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"food@2x.png"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"foodBackground.png"]];
     
     // set title of navigation controller
     self.title = [RARecipes titleAtIndex:self.index];
     
     
+//    UIImage * myImage = [UIImage imageNamed: @"foodBackground.png"];
+//    
+//    // initialize a uiimage view to put a photo in the background
+//    UIImageView *backgroundImage = [[UIImageView alloc] initWithImage:myImage];
+//    
+//    // add image view to view
+//    [self.view addSubview:backgroundImage];
+    
+    
     // initialize a scroll view
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    
 
-    
     
     // set content size of scroll view
     scrollView.contentSize = CGSizeMake(scrollView.frame.size.width, self.view.frame.size.height * 2.5);
@@ -100,6 +107,11 @@ static CGFloat heightForIngredientsTitle = 25;
     // Shift top margin with each label added to the scrollView
     CGFloat top = topMargin + heightForRecipeDescription + margin * 2;
     
+    
+    
+    
+    
+    
     // create an ingredientsTitle label and add it to the view in bold font
     UILabel *ingredientsTitle = [[UILabel alloc] initWithFrame:CGRectMake(margin, top, widthMinusMargin, heightForIngredientsTitle)];
     
@@ -135,7 +147,7 @@ static CGFloat heightForIngredientsTitle = 25;
         ingredientVolume.numberOfLines = 0;
         
         // set font to bold size 20
-        ingredientVolume.font = [UIFont boldSystemFontOfSize:20];
+        ingredientVolume.font = [UIFont boldSystemFontOfSize:15];
         
         // set text to pull from...
         ingredientVolume.text = [RARecipes ingredientVolumeAtIndex:self.index inRecipeAtIndex:self.index];
@@ -183,7 +195,7 @@ static CGFloat heightForIngredientsTitle = 25;
     
     topMargin += (20 + margin);
     
-    
+
     
     
     
@@ -214,7 +226,7 @@ static CGFloat heightForIngredientsTitle = 25;
     
     
     
-    // run through the arrays for directions
+    // iterate through the arrays for directions
     for (int i = 0; i < [[RARecipes directionsAtIndex:self.index] count]; i++) {
     
         // set the height for the directions by using the heightForDirectionsString

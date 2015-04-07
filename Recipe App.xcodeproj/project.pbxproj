@@ -19,6 +19,7 @@
 		71F67B6C192C8D6A00E609F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71F67B54192C8D6A00E609F1 /* UIKit.framework */; };
 		71F67B74192C8D6A00E609F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 71F67B72192C8D6A00E609F1 /* InfoPlist.strings */; };
 		71F67B76192C8D6A00E609F1 /* Recipe_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F67B75192C8D6A00E609F1 /* Recipe_AppTests.m */; };
+		CF316E301AD3877E002DB7BF /* foodBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = CF316E2F1AD3877E002DB7BF /* foodBackground.png */; };
 		D735C5E81ACE34830088137A /* RARecipes.m in Sources */ = {isa = PBXBuildFile; fileRef = D735C5E71ACE34830088137A /* RARecipes.m */; };
 		D735C5EB1ACE35480088137A /* RAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D735C5EA1ACE35480088137A /* RAViewController.m */; };
 		D735C5EE1ACE37750088137A /* RecipesTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D735C5ED1ACE37750088137A /* RecipesTableViewDataSource.m */; };
@@ -55,6 +56,7 @@
 		71F67B71192C8D6A00E609F1 /* Recipe AppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Recipe AppTests-Info.plist"; sourceTree = "<group>"; };
 		71F67B73192C8D6A00E609F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		71F67B75192C8D6A00E609F1 /* Recipe_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recipe_AppTests.m; sourceTree = "<group>"; };
+		CF316E2F1AD3877E002DB7BF /* foodBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foodBackground.png; sourceTree = "<group>"; };
 		D735C5E61ACE34830088137A /* RARecipes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RARecipes.h; path = ../RARecipes.h; sourceTree = "<group>"; };
 		D735C5E71ACE34830088137A /* RARecipes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RARecipes.m; path = ../RARecipes.m; sourceTree = "<group>"; };
 		D735C5E91ACE35480088137A /* RAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RAViewController.h; path = ../RAViewController.h; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				D7C44A8F1AD065EE007C36B2 /* RADetailViewController.m */,
 				71F67B62192C8D6A00E609F1 /* Images.xcassets */,
 				D7C44A951AD0A6CA007C36B2 /* brown_paper_background@1x.pdf */,
+				CF316E2F1AD3877E002DB7BF /* foodBackground.png */,
 				D7C44A931AD0A49D007C36B2 /* food@3x.png */,
 				D7C44A911AD0A362007C36B2 /* food@2x.png */,
 				71F67B57192C8D6A00E609F1 /* Supporting Files */,
@@ -254,6 +257,7 @@
 				D7C44A961AD0A6CA007C36B2 /* brown_paper_background@1x.pdf in Resources */,
 				71F67B63192C8D6A00E609F1 /* Images.xcassets in Resources */,
 				D7C44A921AD0A362007C36B2 /* food@2x.png in Resources */,
+				CF316E301AD3877E002DB7BF /* foodBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
